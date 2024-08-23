@@ -1,9 +1,5 @@
 package top.mramericanmike.barebones.config;
 
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -13,8 +9,12 @@ import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import top.mramericanmike.barebones.BareBones;
 
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 @EventBusSubscriber(modid = BareBones.MODID, bus = EventBusSubscriber.Bus.MOD)
-public class ModConfig {
+public class Config {
 	private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
 	private static final ModConfigSpec.BooleanValue LOG_DIRT_BLOCK = BUILDER
@@ -31,7 +31,7 @@ public class ModConfig {
 
 	private static final ModConfigSpec.ConfigValue<List<? extends String>> ITEM_STRINGS = BUILDER
 			.comment("A list of items to log on common setup.")
-			.defineListAllowEmpty("items", List.of("minecraft:iron_ingot"), ModConfig::validateItemName);
+			.defineListAllowEmpty("items", List.of("minecraft:iron_ingot"), Config::validateItemName);
 
 	public static final ModConfigSpec SPEC = BUILDER.build();
 
