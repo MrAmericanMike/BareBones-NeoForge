@@ -22,11 +22,11 @@ public class ModCreativeTab {
 					.withTabsBefore(CreativeModeTabs.COMBAT)
 					.icon(() -> ModItems.VERDINGO_GEM.get().getDefaultInstance())
 					.displayItems((parameters, output) -> {
-						ModBlocks.BLOCKS.getEntries().stream().forEach(blockDeferredHolder -> {
-							output.accept(blockDeferredHolder.get());
+						ModBlocks.BLOCKS.getEntries().forEach(holder -> {
+							output.accept(holder.get());
 						});
-						ModItems.ITEMS.getEntries().stream().forEach(itemDeferredHolder -> {
-							output.accept(itemDeferredHolder.get());
+						ModItems.ITEMS.getEntries().forEach(holder -> {
+							output.accept(holder.get());
 						});
 //						output.accept(ModItems.RAW_VERDINGO);
 //						output.accept(ModItems.VERDINGO_GEM);
