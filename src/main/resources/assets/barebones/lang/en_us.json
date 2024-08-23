@@ -2,5 +2,6 @@
 	"itemGroup.barebones": "Bare Bones",
 	"item.barebones.raw_verdingo": "Raw Verdingo",
 	"item.barebones.verdingo_gem": "Verdingo Gem",
-	"block.barebones.verdingo_ore": "Verdingo Ore"
+	"block.barebones.verdingo_ore": "Verdingo Ore",
+	"block.barebones.verdingo_block": "Verdingo Block"
 }

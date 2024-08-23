@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"": {
+			"model": "barebones:block/verdingo_block"
+		}
+	}
+}

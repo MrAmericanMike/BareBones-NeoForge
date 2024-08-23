@@ -17,23 +17,28 @@ public class ModBlocks {
 
 	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(BareBones.MODID);
 
-
 	public static final DeferredBlock<Block> VERDINGO_ORE = registerBlock("verdingo_ore",
 			() -> new Block(BlockBehaviour.Properties.of()
 					.strength(3f)
 					.requiresCorrectToolForDrops()
 					.sound(SoundType.STONE)));
 
-	private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
+	public static final DeferredBlock<Block> VERDINGO_BLOCK = registerBlock("verdingo_block",
+			() -> new Block(BlockBehaviour.Properties.of()
+					.strength(4f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.METAL)));
+
+	private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
 		DeferredBlock<T> registeredBlock = BLOCKS.register(name, block);
 		registerBlockItem(name, registeredBlock);
 		return registeredBlock;
 	}
 
-	private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block){
+	private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
 		ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
 	}
-	
+
 	public static void register(IEventBus eventBus) {
 		BLOCKS.register(eventBus);
 	}
